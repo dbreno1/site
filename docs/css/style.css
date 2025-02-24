@@ -32,7 +32,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     background-color: #E9F3FE; 
-    background-image: url('./img/background.PNG'); 
+    background-image: url('./img/background.PNG') !important; 
     background-size: cover; 
     background-position: center;
     background-attachment: fixed; 
