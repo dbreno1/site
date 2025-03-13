@@ -1,5 +1,3 @@
-
-
 * {
     margin: 0;
     padding: 0;
@@ -10,21 +8,26 @@
 
 a {color: #ffffff;}
 
-img{max-width: 100%;}
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 p {
     font-size: 1.4em;
     line-height: 1.4em;
     color: #ffffff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
+
 h2 {
     color: #f8f8f8;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra mais forte para destacar */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .container {
-    width: 1060px;
+    width: 100%;
+    max-width: 1060px;
     margin: 0 auto;
     padding: 15px;
     display: flex;
@@ -35,7 +38,6 @@ h2 {
 html, body {
     width: 100%;
     height: 100%;
-    
 }
 
 body {
@@ -45,7 +47,6 @@ body {
     background: url('./fundo.jpg') no-repeat center center fixed;
     background-size: cover;
 }
-
 
 header {
     width: 100%;
@@ -73,15 +74,20 @@ header {
     transition: all .3s ease-in-out;
 }
 
-.menu .menu-link:hover {opacity: .75;}
+.menu .menu-link:hover {
+    opacity: .75;
+}
 
-
-main {width: 80%;}
+main {
+    width: 80%;
+}
 
 .super-card {
     width: 85%;
     display: flex;
     margin-top: 30px;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .super-card-img, 
@@ -94,12 +100,17 @@ main {width: 80%;}
     align-items: center;
 }
 
-.super-card-img h2 {margin-top: 20px;}
+.super-card-img h2 {
+    margin-top: 20px;
+}
 
-.super-card-text {margin-left: 60px;}
+.super-card-text {
+    margin-left: 60px;
+}
 
-.super-card-text p + p {margin-top: 1em;}
-
+.super-card-text p + p {
+    margin-top: 1em;
+}
 
 .card {
     max-width: 450px;
@@ -114,25 +125,34 @@ main {width: 80%;}
     justify-content: space-between;
 }
 
-.card:hover { box-shadow: 30px 30px 5px 0px rgba(0, 0, 0, .15); }
+.card:hover {
+    box-shadow: 30px 30px 5px 0px rgba(0, 0, 0, .15);
+}
 
-.card-img { padding: 1em; }
+.card-img {
+    padding: 1em;
+}
 
 .img-body,
 .img-body img {
     width: 250px;
     display: table;
-    margin: 0 auto; 
+    margin: 0 auto;
     border-radius: 80%;
 }
 
-.card-body { padding: 1em; }
+.card-body {
+    padding: 1em;
+}
+
 .card-body p {
     color: #000000;
     line-height: 1.4em;
 }
 
-.card-body p + p { margin-top: .5em;}
+.card-body p + p {
+    margin-top: .5em;
+}
 
 .card-button {
     width: 100%;
@@ -161,9 +181,13 @@ main {width: 80%;}
     opacity: .75;
 }
 
-.sub-title {margin: 20px auto;}
+.sub-title {
+    margin: 20px auto;
+}
 
-.li-ornament { margin: 10px 0; }
+.li-ornament {
+    margin: 10px 0;
+}
 
 .li-ornament::before {
     content: "";
@@ -174,5 +198,125 @@ main {width: 80%;}
     background-color: #141A28;
     border-radius: 5px;
 }
-.contact-link {color: #ffffff;}
 
+.contact-link {
+    color: #ffffff;
+}
+
+/* Media Queries */
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .super-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .super-card-text {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu .menu-link {
+        margin: 5px;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .card-button button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .super-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .super-card-img, 
+    .super-card-img img {
+        width: 70%;
+    }
+
+    .super-card-text {
+        margin-left: 0;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu .menu-link {
+        font-size: 1.1em;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .card-button button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .super-card {
+        flex-direction: column;
+    }
+
+    .super-card-img, 
+    .super-card-img img {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .super-card-text {
+        margin-top: 20px;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .menu .menu-link {
+        font-size: 1.2em;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 350px;
+        margin: 10px auto;
+    }
+
+    .card-button button {
+        width: 100%;
+    }
+}
